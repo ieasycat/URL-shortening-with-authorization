@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %} Index Page {% endblock %}}
+{% block content %}
+    {% if request.user.is_authenticated %}
+        <a href="{% url 'profile' %}">You Profile Page</a>
+    {% else %}
+        <p>Log in or register, please</p>
+    {% endif %}
+{% endblock %}

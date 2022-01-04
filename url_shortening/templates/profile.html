@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %} Profile Page {% endblock %}
+{% block content %}
+    <form action="" method="post">
+        <div align="center">
+            {% for field in form %}
+            <div class="form-group">
+                {{  field.label_tag  }}
+                <div>{{field}}</div>
+            </div>
+            <div class="form-error">{{ field.errors }}</div>
+            {% endfor %}
+            <p><input type="submit" value="Create"></p>
+            {% csrf_token %}
+        </div>
+    </form>
+    <div align="center">
+        <table border=1>
+            <tr>
+                <td><div align="center">Full URL</div></td>
+                <td><div align="center">Short URL</div></td>
+            </tr>
+            <tr>
+                {% for url in urls %}
+                <td><div align="center">{{ url.url }}</div></td>
+                <td>
+                    <div align="center">
+                    <a href="{% url 'redirect_original' url.id %}">127.0.0.1:8000/{{ url.id }}</a>
+                    </div>
+                </td>
+            </tr>
+                {% endfor %}
+        </table>
+    </div>
+{% endblock %}
