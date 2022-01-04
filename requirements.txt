@@ -9,4 +9,3 @@ django-heroku
 whitenoise
 djangorestframework
 django_extensions
-psycopg2
