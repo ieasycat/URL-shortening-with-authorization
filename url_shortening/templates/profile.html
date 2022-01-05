@@ -21,15 +21,21 @@
                 <td><div align="center">Short URL</div></td>
             </tr>
             <tr>
-                {% for url in urls %}
-                <td><div align="center">{{ url.url }}</div></td>
+                {% for contact in page_obj %}
+                <td><div align="center">{{ contact.url }}</div></td>
                 <td>
                     <div align="center">
-                    <a href="{{ request.scheme }}://{{ request.get_host }}/{{ url.id }}">{{ request.scheme }}://{{ request.get_host }}/{{ url.id }}</a>
+                    <a href="{{ request.scheme }}://{{ request.get_host }}/{{ contact.id }}">{{ request.scheme }}://{{ request.get_host }}/{{ contact.id }}</a>
                     </div>
                 </td>
             </tr>
                 {% endfor %}
         </table>
+            <nav>
+                {% for page in page_obj.paginator.page_range %}
+                    <a href="?page={{ page }}">{{ page }}</a>
+                 {% endfor %}
+            </nav>
     </div>
+
 {% endblock %}
