@@ -33,10 +33,10 @@
 
 ## Установка
 
-git@github.com:ieasycat/Test_Task_URL_Shortening.git
-virtualenv -p python3 env
-source env/bin/activate
-pip install -r requirements.txt
+1. git@github.com:ieasycat/Test_Task_URL_Shortening.git
+2. virtualenv -p python3 env
+3. source env/bin/activate
+4. pip install -r requirements.txt
 
 ## Мелочи
 
