@@ -25,7 +25,7 @@
                 <td><div align="center">{{ url.url }}</div></td>
                 <td>
                     <div align="center">
-                    <a href="{% url 'redirect_original' url.id %}">url-short-v2.herokuapp.com/{{ url.id }}</a>
+                    <a href="{{ request.scheme }}://{{ request.get_host }}/{{ url.id }}">{{ request.scheme }}://{{ request.get_host }}/{{ url.id }}</a>
                     </div>
                 </td>
             </tr>
