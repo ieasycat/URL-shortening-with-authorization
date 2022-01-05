@@ -1,0 +1,26 @@
+1.
+select b.client_number, coalesce(SUM(ev.outcome = 'win'), 0) as win, coalesce(SUM(ev.outcome = 'lose'), 0) as lose
+FROM bid as b
+LEFT JOIN event_entity as ee
+	ON b.play_id = ee.play_id
+LEFT JOIN event_value as ev
+	ON ee.play_id = ev.play_id
+GROUP BY b.client_number
+
+
+2.
+select
+	sport_name,
+	concat(teamA, '-', teamB) as teams,
+	COUNT(*) as game_count
+from (
+	select
+		sport_name,
+		GREATEST(home_team, away_team) as teamA,
+		LEAST(home_team, away_team) as teamB
+	from event_entity
+) querty
+group by
+	sport_name,
+	teamA,
+	teamB;
