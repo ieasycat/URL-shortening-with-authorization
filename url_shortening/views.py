@@ -32,8 +32,8 @@ def logout_user(request):
 
 
 def profile(request):
-    urls = URL.objects.filter(user=request.user).all()
-    paginator = Paginator(urls, 5)
+    urls_list = URL.objects.filter(user=request.user).all()
+    paginator = Paginator(urls_list[::-1], 5)
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -52,7 +52,6 @@ def profile(request):
         form = URLForm()
 
     context = {
-        'urls': urls[::-1],
         'form': form,
         'page_obj': page_obj,
     }
