@@ -1,6 +1,6 @@
 # URL shortening with authorization
 
-This is yest task.
+This is test task.
 
 It is necessary to write a service for shortening long links.
 
