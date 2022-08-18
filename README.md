@@ -31,7 +31,7 @@ It will be a plus:
 
 ## Install
 
-- git@github.com:ieasycat/Test_Task_URL_Shortening.git
+- git@github.com:ieasycat/URL-shortening-with-authorization.git
 - virtualenv -p python3 env
 - source env/bin/activate
 - pip install -r requirements.txt
