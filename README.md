@@ -1,43 +1,45 @@
-# Тестовое Django
+# URL shortening with authorization
 
-Задание
+This is yest task.
+It is necessary to write a service for shortening long links.
 
+The service should include 4 pages:
 
-Необходимо написать сервис сокращения длинных ссылок.
+1. User registration page.
+2. User authorization page.
+3. A page for shortening links.
 
-Сервис должен включать в себя 4 страницы:
-
-1. Страница регистрации пользователей.
-2. Страница авторизации пользователей.
-3. Страница для сокращения ссылок.
-
-   Как должно работать:
-     + Посетитель сайта вводит любой оригинальный URL-адрес в поле ввода, как   http://example.com/verylongurl...;
-     + Нажимает кнопку "Сократить";
-     + В ответ получает уникальный короткий URL-адрес (пример: http://yourdomain/8U7VuC).
+   How it should work:
+     + The site visitor enters any original URL in the input field as http://example.com/verylongurl...;
+     + Presses the "Shorten" button;
+     + Receives a unique short URL in response (example: http://yourdomain/8U7VuC).
    
-   Не используйте внешние API как vk.cc и т.д.
-   Короткий URL должен уникальным, перенаправлять на оригинальную ссылку и быть актуальным навсегда, неважно, сколько раз он был использован.
-4. Просмотр списка сокращенных ссылок авторизованного пользователя.
+   Don't use external Api like vk.cc etc.
+   The short URL must be unique, redirect to the original link and be relevant forever, no matter how many times it has been used.
+4. View the list of abbreviated links for the authorized user.
 
 
-Нефункциональные требования:
-1. Язык программирования: Python 3.6+
+Non-functional requirements:
+1. Programming language: Python 3.6+
 2. Django 3+
-3. Минимальное необходимое количество библиотек-зависимостей
-4. Соответствие исходного кода PEP 8
+3. Minimum required number of dependency libraries
+4. Source code compliance PEP 8
 
-Будет плюсом:
+It will be a plus:
 1. Python 3.10 + Django 3.2.9
-2. Задеплоить проект
+2. Deployed project
 
-## Установка
+## Install
 
-1. git@github.com:ieasycat/Test_Task_URL_Shortening.git
-2. virtualenv -p python3 env
-3. source env/bin/activate
-4. pip install -r requirements.txt
+- git@github.com:ieasycat/Test_Task_URL_Shortening.git
+- virtualenv -p python3 env
+- source env/bin/activate
+- pip install -r requirements.txt
 
-## Мелочи
+## Launching the application
 
-[Проект на хероку](https://url-short-v2.herokuapp.com/)
+- python manage.py runserver
+
+## Heroku
+
+[Heroku](https://url-short-v2.herokuapp.com/)
